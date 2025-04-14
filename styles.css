@@ -37,8 +37,8 @@ body {
     padding: 3rem 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 90%;
-    max-width: 600px;
+    width: 95%;
+    max-width: 1000px;
     margin: 0 auto;
     overflow-x: auto;
 }
@@ -90,6 +90,7 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(98, 70, 234, 0.3);
+    display: block;
 }
 
 #dreamButton:hover {
@@ -115,7 +116,8 @@ p {
 
 /* Table Styles */
 table {
-    min-width: 600px;
+    min-width: 800px;
+    width: 100%;
     background: white;
     margin: 1rem auto;
     border-radius: 10px;
@@ -145,6 +147,13 @@ tr:nth-child(even) {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        width: 95%;
+        max-width: 95%;
+    }
+}
+
 @media (max-width: 768px) {
     .content-wrapper {
         padding: 1.5rem 1rem;
@@ -162,6 +171,7 @@ tr:nth-child(even) {
     }
 
     table {
+        min-width: 600px;
         font-size: 0.9rem;
     }
 
@@ -187,4 +197,13 @@ tr:nth-child(even) {
         padding: 0.7rem 1.8rem;
         font-size: 1rem;
     }
+}
+
+/* Add these new styles */
+.hidden {
+    display: none !important;
+}
+
+.loading-animation.hidden {
+    display: none !important;
 } 
