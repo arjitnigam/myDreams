@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loadingAnimation = document.getElementById('loadingAnimation');
+    const mainContent = document.getElementById('mainContent');
     const dreamButton = document.getElementById('dreamButton');
     
     // Simulate loading time
@@ -7,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hide loading animation
         loadingAnimation.classList.add('hidden');
         
+        // Show main content
+        mainContent.classList.remove('hidden');
+        setTimeout(() => {
+            mainContent.classList.add('show');
+        }, 100);
+
         // Show and animate button
         dreamButton.classList.remove('hidden');
         dreamButton.classList.add('show');

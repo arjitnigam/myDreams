@@ -91,8 +91,11 @@ p {
 /* Update visibility classes */
 .hidden {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
 }
 
+/* Update button styles */
 #dreamButton {
     background: #6366f1;
     color: white;
@@ -106,10 +109,21 @@ p {
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: none; /* Hide by default */
+    opacity: 0;
+    visibility: hidden;
+}
+
+#dreamButton:hover {
+    transform: translateY(-2px);
+    background: #4f46e5;
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.8);
 }
 
 #dreamButton.show {
     display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     animation: buttonAppear 0.5s ease-out forwards;
 }
 
@@ -217,5 +231,116 @@ td:not(:last-child) {
     th, td {
         padding: 0.8rem;
         font-size: 0.9rem;
+    }
+}
+
+/* Add these new styles */
+.main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+.main-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dream-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.dream-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #6366f1;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+.floating-orbs {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.5;
+    animation: floatOrb 20s infinite ease-in-out;
+}
+
+.orb1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2), transparent 70%);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.orb2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.2), transparent 70%);
+    bottom: 20%;
+    right: 15%;
+    animation-delay: -5s;
+}
+
+.orb3 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at center, rgba(79, 70, 229, 0.2), transparent 70%);
+    top: 50%;
+    left: 50%;
+    animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(0, 50px) scale(0.9);
+    }
+    75% {
+        transform: translate(-50px, -20px) scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 } 
