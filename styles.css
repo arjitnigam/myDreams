@@ -35,7 +35,7 @@ body {
 }
 
 .content-wrapper {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(15, 23, 42, 0.7);
     backdrop-filter: blur(12px);
     border-radius: 16px;
     padding: 3rem;
@@ -44,6 +44,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 h1 {
@@ -88,7 +89,7 @@ p {
 }
 
 #dreamButton {
-    background: linear-gradient(45deg, var(--primary-color), #4f46e5);
+    background: #6366f1;
     color: white;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
@@ -96,17 +97,20 @@ p {
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
     display: inline-block;
     opacity: 1;
     visibility: visible;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2rem;
 }
 
 #dreamButton:hover {
     transform: translateY(-2px);
-    background: linear-gradient(45deg, #4f46e5, var(--primary-color));
-    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+    background: #4f46e5;
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.8);
 }
 
 #dreamButton:active {
