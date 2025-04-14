@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loadingAnimation = document.querySelector('.loading-animation');
+    const loadingAnimation = document.getElementById('loadingAnimation');
     const dreamButton = document.getElementById('dreamButton');
     
     // Simulate loading time
