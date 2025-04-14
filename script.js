@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Simulate loading time
     setTimeout(() => {
-        document.getElementById('dreamButton').style.display = 'block';
+        const dreamButton = document.getElementById('dreamButton');
+        dreamButton.classList.add('show');
+        dreamButton.style.display = 'block';
     }, 3000);
 
     document.getElementById('dreamButton').addEventListener('click', function() {

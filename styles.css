@@ -1,9 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,20 +11,25 @@ body {
 
 .container {
     text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .loading-animation {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ffffff;
     border-radius: 50%;
     animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
 }
 
 @keyframes spin {
@@ -33,40 +38,62 @@ body {
 }
 
 #dreamButton {
-    padding: 15px 30px;
+    padding: 15px 40px;
     font-size: 18px;
-    background-color: #3498db;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #dreamButton:hover {
-    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2ecc71, #3498db);
 }
 
-/* Styles for the dream tables */
+#dreamButton:active {
+    transform: translateY(1px);
+}
+
+@keyframes buttonAppear {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#dreamButton.show {
+    display: block !important;
+    animation: buttonAppear 0.5s ease-out forwards;
+}
+
+/* Update table styles */
 table {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
-    background-color: white;
-    color: #333;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 th {
-    background-color: #3498db;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
     color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 12px;
+    color: #2c3e50;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgba(245, 245, 245, 0.9);
 } 
