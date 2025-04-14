@@ -83,6 +83,8 @@ p {
     position: relative;
     z-index: 2;
     margin: 2rem 0;
+    display: flex;
+    justify-content: center;
 }
 
 #dreamButton {
@@ -97,6 +99,8 @@ p {
     font-weight: 500;
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
     display: inline-block;
+    opacity: 1;
+    visibility: visible;
 }
 
 #dreamButton:hover {
@@ -122,6 +126,13 @@ p {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* Remove the .hidden class from the button */
+#dreamButton.hidden {
+    display: inline-block !important;
+    opacity: 1;
+    visibility: visible;
 }
 
 .dream-bg {
@@ -153,10 +164,6 @@ p {
 @keyframes twinkle {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 0.5; }
-}
-
-.hidden {
-    display: none !important;
 }
 
 /* Update Table Styles */

@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const loadingAnimation = document.querySelector('.loading-animation');
+    const dreamButton = document.getElementById('dreamButton');
+    
     // Simulate loading time
     setTimeout(() => {
-        // Hide the loading animation
-        document.querySelector('.loading-animation').style.display = 'none';
+        // Hide loading animation
+        loadingAnimation.classList.add('hidden');
         
-        // Show the button
-        const dreamButton = document.getElementById('dreamButton');
+        // Show and animate button
+        dreamButton.classList.remove('hidden');
         dreamButton.classList.add('show');
-        dreamButton.style.display = 'block';
     }, 3000);
 
-    document.getElementById('dreamButton').addEventListener('click', function() {
+    dreamButton.addEventListener('click', function() {
         // Open Dreams Diary
         window.open('dreams-diary.html', '_blank');
         // Open Dreams Total
