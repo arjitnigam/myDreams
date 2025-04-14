@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="dream-bg">
+        <div class="floating-cloud cloud1"></div>
+        <div class="floating-cloud cloud2"></div>
+        <div class="floating-cloud cloud3"></div>
+        <div class="stars"></div>
+    </div>
     <main class="main-container">
         <div class="content-wrapper">
             <div id="welcome-section">
-                <div class="loading-animation">
+                <div class="loading-animation" id="loadingAnimation">
                     <div class="spinner"></div>
                     <h1>Welcome to the Dreams Section</h1>
                     <p>Loading your dream portal...</p>
                 </div>
-            </div>
-            <div class="button-container">
-                <button id="dreamButton" style="display: none;">My Dreams</button>
+                <div class="button-container">
+                    <button id="dreamButton" class="hidden">My Dreams</button>
+                </div>
             </div>
         </div>
     </main>
